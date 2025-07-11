@@ -21,6 +21,7 @@ A página utiliza fontes personalizadas, imagens ilustrativas, vídeo incorporad
 <p align="center">
   <img src="imagens/desktop02.png" alt="Descrição 2" width="70%">
 </p>
+
 ---
 
 ### 📱 Versão Mobile
