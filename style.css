@@ -1,0 +1,285 @@
+@charset "utf-8";
+@font-face {
+    font-family: "idroid";
+    src: url(fontes/idroid.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+    justify-items: auto;
+    margin: 0px;
+    background-color: #83e1ad9f;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.links {
+    text-decoration: none;
+    color: #178140;
+    font-weight: bold;
+    position: relative;
+}
+
+.links::after {
+    content: "🔗 ";
+    position: relative;
+}
+
+
+
+/* ---------------- CABEÇA DO CÓDIGO ------------------ */
+header {
+    background-image: linear-gradient(to bottom,#55ad7d,#063318);
+    height: auto;
+}
+
+header > h1 {
+    font: 500 60px "Bebas Neue", sans-serif;
+    color: rgba(255, 255, 255, 0.952);
+    text-shadow:1px 1px 2px rgba(0, 0, 0, 0.856);
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0px;
+    padding: 30px 30px 5px;
+}
+
+header > p {
+    color: rgba(255, 255, 255, 0.527);
+    text-align: center;
+    margin: 10px 10px 20px;
+    font-size: 15px;
+    font-weight: 100;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.486);
+}
+
+/* botão de menu oculto por padrão */
+#menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+/* estilo responsivo */
+@media (max-width: 550px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+}
+
+header > nav {
+    display: none; /* esconde os links por padrão */
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    background-color: #095328; /* reforça a divisão visual */
+  }
+
+nav > a {
+    font-size: 14px;           /* texto menor */
+    padding: 6px 12px;         /* menos espaço interno */
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+header > nav a {
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#menu-btn {
+    display: block;
+}
+
+header.nav-open nav {
+    display: flex; /* mostra quando a classe ativa for adicionada */
+}
+
+ /* desativa hover em mobile */
+nav a:hover {
+    background-color: transparent;
+}}
+
+nav > a {
+    color: rgba(255, 255, 255, 0.767);
+    padding: 10px 30px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block; /* importante para o transform funcionar */
+    transition: transform 0.1s ease;
+}
+
+nav > a:hover {
+    background-color: #65ce942f ;
+    border-radius: 5px;
+}
+
+nav > a:active {
+    transform: scale(0.95);
+}
+
+main {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 20px;
+    background-color: white;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.479);
+    border-radius: 0 0 10px 10px;
+}
+
+
+main > h1 {
+    margin: 0;
+    padding: 30px 0 10px;
+    color: #0d3d21d8;
+}
+
+main > h1, h2 {
+    font-family: "idroid";
+}
+
+main > h2 {
+    background-image: linear-gradient(to right, #b2ecccd2, rgba(255, 255, 255, 0.644)) ;
+    padding: 13px;
+    border-radius: 10px;
+    color: #178140;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.212);
+}
+
+
+main > p { 
+    text-indent: 20px;
+    margin: 10px;
+    font-weight: 500;
+}
+
+main > img#new-mascote {
+    display: block;    /* transforma em bloco */
+    margin-left: auto;
+    margin-right: auto;
+    /* ou simplesmente margin: 0 auto; */
+}
+
+.video-wrapper {
+  margin-left: -20px; /* anula o padding do main */
+  margin-right: -20px;
+  width: calc(100% + 40px); /* compensa os dois lados */
+}
+
+.video-section {
+  background-color: #0b4120;
+  padding: 40px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* proporção 16:9 */
+  height: 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+section {
+    border-radius: 10px;
+    background-color: #B2ECCC;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.589);
+}
+
+section > h3 {
+    color: white;
+    font-weight: 300;
+    padding: 15px;
+    background-color: #198844de;
+    border-radius: 15px 15px 0 0;
+}
+
+section > p {
+    padding: 10px;
+    text-indent: 20px;
+    margin: 10px;
+    font-weight: 500;
+}
+
+
+.duas-colunas {
+    display: flex;
+    flex-wrap: wrap;         /* quebra linha se necessário */
+    gap: 20px;               /* espaçamento entre as colunas */
+    padding: 0 30px 0;
+    justify-content: center;
+}
+
+.duas-colunas > div {
+    flex: 1 1 45%;           /* ocupa cerca de metade, ajustável */
+    min-width: 200px;        /* evita ficar pequeno demais */
+}
+
+.duas-colunas ul {
+    list-style: none;
+    padding-left: 0; /* opcional: remove o recuo padrão */
+}
+
+.duas-colunas li::before {
+    content: "✔ ";
+    color: #178140;           /* cor do ícone */
+    font-weight: bold;
+}
+
+.final-main {
+    text-indent: 20px;
+    margin: 10px;
+    font-weight: 500;
+}
+
+footer {
+    background-color: #063318;         /* verde escuro, igual à parte do vídeo */
+    color: #83e1ad6e;                    /* verde claro para o texto */
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;                  /* espaço entre main e footer */
+}
+
+footer strong {
+    color: rgba(255, 255, 255, 0.534);                      /* branco para “Grupo Relv” e “Curso em Vídeo” */
+    font-weight: bold;
+}
+
+main img,
+main picture,
+img#new-mascote {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
