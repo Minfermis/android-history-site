@@ -14,7 +14,7 @@ A página utiliza fontes personalizadas, imagens ilustrativas, vídeo incorporad
 ## 📸 Prévia do Projeto
 
 ### 🖥️ Versão Desktop
-![Versão Desktop](imagens/desktop02.png)
+![Versão Desktop](imagens/desktop01.png)
 ![Versão Desktop](imagens/desktop02.png)
 
 ---
