@@ -13,6 +13,14 @@ A página utiliza fontes personalizadas, imagens ilustrativas, vídeo incorporad
 
 ## 📸 Prévia do Projeto
 
+<p align="center">
+  <img src="imagens/desktop01.png" alt="Descrição 1" width="70%">
+</p>
+
+<p align="center">
+  <img src="imagens/desktop02.png" alt="Descrição 2" width="70%">
+</p>
+
 ### 🖥️ Versão Desktop
 ![Versão Desktop](imagens/desktop01.png)
 ![Versão Desktop](imagens/desktop02.png)
