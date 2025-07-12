@@ -1,65 +1,113 @@
 @charset "utf-8";
 @font-face {
-    font-family: "idroid";
-    src: url(fontes/idroid.otf) format('opentype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "idroid";
+  src: url(fontes/idroid.otf) format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
+:root {
+  /* Cores */
+  --cor-fundo-principal: #83e1ad9f;
+  --cor-header-topo: #55ad7d;
+  --cor-header-fundo: #063318;
+  --cor-links: #178140;
+  --cor-branca-transparente: rgba(255, 255, 255, 0.952);
+  --cor-texto-claro: rgba(255, 255, 255, 0.527);
+  --cor-video-fundo: #0b4120;
+  --cor-h2-bg: #b2ecccd2;
+  --cor-footer: #063318;
+  --cor-footer-texto: #83e1ad6e;
+  --cor-section: #B2ECCC;
+  --cor-section-titulo: #198844de;
+  --cor-link-hover: #65ce942f;
+
+  /* Fontes */
+  --fonte-principal: Arial, Helvetica, sans-serif;
+  --fonte-titulo: "Bebas Neue", sans-serif;
+  --fonte-droid: "idroid";
+
+  /* Font-Weight */
+  --peso-regular: 400;
+  --peso-leve: 100;
+  --peso-medio: 500;
+  --peso-bold: 700;
+
+  /* Tamanhos */
+  --fonte-h1-desktop: 60px;
+  --fonte-h1-mobile: 32px;
+  --fonte-h2: 20px;
+  --fonte-padrao: 14px;
+  --espacamento-texto: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 .bebas-neue-regular {
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
+  font-family: var(--fonte-titulo);
+  font-weight: var(--peso-regular);
   font-style: normal;
 }
 
 body {
-    justify-items: auto;
-    margin: 0px;
-    background-color: #83e1ad9f;
-    font-family: Arial, Helvetica, sans-serif;
+  justify-items: auto;
+  margin: 0px;
+  background-color: var(--cor-fundo-principal);
+  font-family: var(--fonte-principal);
 }
 
 .links {
-    text-decoration: none;
-    color: #178140;
-    font-weight: bold;
-    position: relative;
+  text-decoration: none;
+  color: var(--cor-links);
+  font-weight: var(--peso-bold);
+  position: relative;
 }
 
 .links::after {
-    content: "🔗 ";
-    position: relative;
+  content: "\1F517 ";
+  position: relative;
 }
 
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-
-/* ---------------- CABEÇA DO CÓDIGO ------------------ */
 header {
-    background-image: linear-gradient(to bottom,#55ad7d,#063318);
-    height: auto;
+  background-image: linear-gradient(to bottom, var(--cor-header-topo), var(--cor-header-fundo));
+  height: auto;
 }
 
 header > h1 {
-    font: 500 60px "Bebas Neue", sans-serif;
-    color: rgba(255, 255, 255, 0.952);
-    text-shadow:1px 1px 2px rgba(0, 0, 0, 0.856);
-    letter-spacing: 2px;
-    text-align: center;
-    margin: 0px;
-    padding: 30px 30px 5px;
+  font-family: var(--fonte-titulo);
+  font-weight: var(--peso-medio);
+  font-size: var(--fonte-h1-desktop);
+  color: var(--cor-branca-transparente);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.856);
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0px;
+  padding: 30px 30px 5px;
 }
 
 header > p {
-    color: rgba(255, 255, 255, 0.527);
-    text-align: center;
-    margin: 10px 10px 20px;
-    font-size: 15px;
-    font-weight: 100;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.486);
+  color: var(--cor-texto-claro);
+  text-align: center;
+  margin: 10px 10px 20px;
+  font-size: 15px;
+  font-weight: var(--peso-leve);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.486);
 }
 
-/* botão de menu oculto por padrão */
 #menu-btn {
   display: none;
   background: none;
@@ -70,120 +118,119 @@ header > p {
   padding: 10px 20px;
 }
 
-/* estilo responsivo */
 @media (max-width: 550px) {
   header {
     flex-direction: column;
     align-items: center;
-}
+  }
 
-header > nav {
-    display: none; /* esconde os links por padrão */
+  header > nav {
+    display: none;
     flex-direction: column;
     gap: 0;
     padding: 10px 0;
     width: 100%;
     text-align: center;
-    background-color: #095328; /* reforça a divisão visual */
+    background-color: #095328;
   }
 
-nav > a {
-    font-size: 14px;           /* texto menor */
-    padding: 6px 12px;         /* menos espaço interno */
+  nav > a {
+    font-size: 14px;
+    padding: 6px 12px;
     color: rgba(255, 255, 255, 0.85);
-    font-weight: 500;
+    font-weight: var(--peso-medio);
     text-decoration: none;
     border-radius: 4px;
     transition: background-color 0.2s ease;
-}
+  }
 
-header > nav a {
+  header > nav a {
     padding: 15px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
+  }
 
-#menu-btn {
+  #menu-btn {
     display: block;
-}
+  }
 
-header.nav-open nav {
-    display: flex; /* mostra quando a classe ativa for adicionada */
-}
+  header.nav-open nav {
+    display: flex;
+  }
 
- /* desativa hover em mobile */
-nav a:hover {
+  nav a:hover {
     background-color: transparent;
-}}
+  }
+}
 
 nav > a {
-    color: rgba(255, 255, 255, 0.767);
-    padding: 10px 30px;
-    font-weight: 500;
-    text-decoration: none;
-    display: inline-block; /* importante para o transform funcionar */
-    transition: transform 0.1s ease;
+  color: rgba(255, 255, 255, 0.767);
+  padding: 10px 30px;
+  font-weight: var(--peso-medio);
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.1s ease;
 }
 
 nav > a:hover {
-    background-color: #65ce942f ;
-    border-radius: 5px;
+  background-color: var(--cor-link-hover);
+  border-radius: 5px;
 }
 
 nav > a:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 main {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px 20px;
-    background-color: white;
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.479);
-    border-radius: 0 0 10px 10px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 10px 10px;
+  box-sizing: border-box;
 }
 
-
 main > h1 {
-    margin: 0;
-    padding: 30px 0 10px;
-    color: #0d3d21d8;
+  margin: 0;
+  padding: 30px 0 10px;
+  color: #0d3d21d8;
+  font-family: var(--fonte-droid);
 }
 
 main > h1, h2 {
-    font-family: "idroid";
+  font-family: var(--fonte-droid);
 }
 
 main > h2 {
-    background-image: linear-gradient(to right, #b2ecccd2, rgba(255, 255, 255, 0.644)) ;
-    padding: 13px;
-    border-radius: 10px;
-    color: #178140;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.212);
+  background-image: linear-gradient(to right, var(--cor-h2-bg), rgba(255, 255, 255, 0.644));
+  padding: 13px;
+  border-radius: 10px;
+  color: var(--cor-links);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.212);
 }
 
-
-main > p { 
-    text-indent: 20px;
-    margin: 10px;
-    font-weight: 500;
+main > p {
+  text-indent: var(--espacamento-texto);
+  margin: 10px;
+  font-weight: var(--peso-medio);
 }
 
 main > img#new-mascote {
-    display: block;    /* transforma em bloco */
-    margin-left: auto;
-    margin-right: auto;
-    /* ou simplesmente margin: 0 auto; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .video-wrapper {
-  margin-left: -20px; /* anula o padding do main */
-  margin-right: -20px;
-  width: calc(100% + 40px); /* compensa os dois lados */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .video-section {
-  background-color: #0b4120;
+  background-color: var(--cor-video-fundo);
   padding: 40px 20px;
   width: 100%;
   box-sizing: border-box;
@@ -191,7 +238,8 @@ main > img#new-mascote {
 
 .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* proporção 16:9 */
+  box-sizing: border-box;
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   width: 100%;
@@ -205,81 +253,147 @@ main > img#new-mascote {
   left: 0;
   width: 100%;
   height: 100%;
+  max-width: 100%;
   border: 0;
 }
 
 section {
-    border-radius: 10px;
-    background-color: #B2ECCC;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.589);
+  border-radius: 10px;
+  background-color: var(--cor-section);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.589);
 }
 
 section > h3 {
-    color: white;
-    font-weight: 300;
-    padding: 15px;
-    background-color: #198844de;
-    border-radius: 15px 15px 0 0;
+  color: white;
+  font-weight: var(--peso-regular);
+  padding: 15px;
+  background-color: var(--cor-section-titulo);
+  border-radius: 15px 15px 0 0;
+  font-size: 18px;
 }
 
 section > p {
-    padding: 10px;
-    text-indent: 20px;
-    margin: 10px;
-    font-weight: 500;
+  padding: 10px;
+  text-indent: var(--espacamento-texto);
+  margin: 10px;
+  font-weight: var(--peso-medio);
 }
 
-
 .duas-colunas {
-    display: flex;
-    flex-wrap: wrap;         /* quebra linha se necessário */
-    gap: 20px;               /* espaçamento entre as colunas */
-    padding: 0 30px 0;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 30px 0;
+  justify-content: center;
 }
 
 .duas-colunas > div {
-    flex: 1 1 45%;           /* ocupa cerca de metade, ajustável */
-    min-width: 200px;        /* evita ficar pequeno demais */
+  flex: 1 1 45%;
+  min-width: 200px;
 }
 
 .duas-colunas ul {
-    list-style: none;
-    padding-left: 0; /* opcional: remove o recuo padrão */
+  list-style: none;
+  padding-left: 0;
 }
 
 .duas-colunas li::before {
-    content: "✔ ";
-    color: #178140;           /* cor do ícone */
-    font-weight: bold;
+  content: "\2714 ";
+  color: var(--cor-links);
+  font-weight: bold;
 }
 
 .final-main {
-    text-indent: 20px;
-    margin: 10px;
-    font-weight: 500;
+  text-indent: var(--espacamento-texto);
+  margin: 10px;
+  font-weight: var(--peso-medio);
 }
 
 footer {
-    background-color: #063318;         /* verde escuro, igual à parte do vídeo */
-    color: #83e1ad6e;                    /* verde claro para o texto */
-    font-size: 14px;
-    text-align: center;
-    padding: 10px 20px;
-    margin-top: 20px;                  /* espaço entre main e footer */
+  background-color: var(--cor-footer);
+  color: var(--cor-footer-texto);
+  font-size: var(--fonte-padrao);
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 20px;
 }
 
 footer strong {
-    color: rgba(255, 255, 255, 0.534);                      /* branco para “Grupo Relv” e “Curso em Vídeo” */
-    font-weight: bold;
+  color: rgba(255, 255, 255, 0.534);
+  font-weight: var(--peso-bold);
 }
 
 main img,
 main picture,
 img#new-mascote {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
 }
 
+@media (max-width: 550px) {
+  :root {
+    --fonte-h1-desktop: var(--fonte-h1-mobile);
+  }
+
+  body {
+    font-size: var(--fonte-padrao);
+  }
+
+  header > h1 {
+    font-size: var(--fonte-h1-mobile);
+    padding: 20px 15px 10px;
+    line-height: 1.2;
+    word-break: break-word;
+    box-sizing: border-box;
+  }
+
+  header > p {
+    font-size: var(--fonte-padrao);
+    padding: 0 15px;
+    line-height: 1.4;
+  }
+
+  main > h1 {
+    font-size: 24px;
+    padding: 20px 0 10px;
+  }
+
+  main > h2 {
+    font-size: var(--fonte-h2);
+    padding: 10px;
+  }
+
+  section > p,
+  main > p,
+  .final-main {
+    font-size: var(--fonte-padrao);
+    padding: 10px;
+    text-indent: 15px;
+  }
+
+  .video-wrapper {
+    margin: 0 -15px;
+    width: calc(100% + 30px);
+  }
+
+  .duas-colunas {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .duas-colunas > div {
+    min-width: 100%;
+  }
+
+  nav > a {
+    font-size: var(--fonte-padrao);
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+}
