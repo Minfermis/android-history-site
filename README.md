@@ -7,7 +7,7 @@ A página utiliza fontes personalizadas, imagens ilustrativas, vídeo incorporad
 ---
 
 ## 🌐 Acesse o site aqui:
-🔗 https://minfermis.github.io/android-history-site/
+🔗 https://emersonromana.github.io/android-history-site/
 
 ---
 
